@@ -5,16 +5,16 @@
 #include "SnakePart.h"
 
 typedef struct Snake {
-    Vector* pos;
     int direction;
-    float speed;
     int partsNb;
     SnakePart* head;
+    SnakePart* tail;
 } Snake;
 
 Snake* snake_init(float x, float y,int dir);
 
 void snake_addPart(Snake* s);
+void snake_update(Snake* s);
 void snake_display(Snake* s, SDL_Renderer* rend);
 
 void snake_destruct();
